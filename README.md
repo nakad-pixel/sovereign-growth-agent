@@ -1,15 +1,34 @@
 # Sovereign Growth Agent
 
-Runs every 6 hours on GitHub Actions. Its only job: grow revenue for Nexus Web Systems through marketing and distribution.
+Autonomous marketing agent that wakes every 6 hours on GitHub Actions, proposes ONE revenue-oriented action,
+asks you to approve it in Telegram, publishes only after you tap Approve, then learns from the outcome.
 
-- **Automaton-style motive:** one prime goal (revenue ladder), tracked in `memory/metrics.jsonl`.
-- **Hermes-style learning:** reflects after every outcome, writes lessons, and grows a skill library in `memory/skills/`.
-- **Memory:** plain files committed to this repo (`memory/`), searched with an in-memory SQLite FTS index each run.
-- **Safety:** every public action needs a Telegram Approve tap. See `RULES.md`. Emergency stop: create a file named `KILL` in the repo root.
+- **Automaton-style motive:** one prime goal (the revenue ladder in `SOUL.md`), tracked via `/rev` in Telegram.
+- **Hermes-style learning:** reflects after every decision, writes lessons and reusable skills to `memory/`.
+- **Memory:** plain files in `memory/` committed to git, searched with an in-RAM SQLite FTS5 index each run.
+- **Safety:** `agent/guard.py` blocks banned claims, duplicates and over-cap proposals; `RULES.md` is immutable to the agent;
+  only the configured Telegram chat can approve; hard LLM-call budget; `KILL` file or `/pause` stops it.
 
-## Setup
-1. Add repo secrets: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `COMPOSIO_API_KEY`.
-2. Deploy `worker/worker.js` to Cloudflare Workers (secrets: `TG_SECRET`, `GH_PAT`, `GH_REPO`, `ALLOWED_CHAT_ID`) and set the Telegram webhook to it with the same `secret_token`.
-3. Run the `growth-agent` workflow manually once.
+## Workflows
+| Workflow | When | What |
+|---|---|---|
+| `growth-agent` | every 6h | plan, guard, build video, send draft to Telegram |
+| `approvals-poller` | every ~10 min | reads your Approve/Reject taps and commands, publishes, learns |
+| `ci` | on code changes | runs the test suite |
 
-LLM calls use GitHub Models via `GITHUB_TOKEN` by default. Override with `LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL`.
+Approval latency is the poller interval (GitHub cron can lag; expect 10-30 min).
+
+## Telegram commands
+`/status` `/pause` `/resume` `/rev <amount> [note]` `/help`. Approve/Reject arrive as buttons under each draft.
+
+## Setup (repo Settings, Secrets and variables, Actions)
+Required: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` (send /start to your bot, then read the id from `getUpdates`).
+Optional: `COMPOSIO_API_KEY` (project key from the Composio dashboard, needed only for the `github_blog` channel).
+LLM calls use GitHub Models with the built-in `GITHUB_TOKEN` (free tier, rate limited). Override with `LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL`.
+
+## Channels (`config/channels.json`)
+- `telegram_manual` (enabled): after approval, a ready-to-post package + video is sent to you to post yourself.
+- `github_blog` (disabled): commits an approved article to the Astro blog repo via Composio. Enable after setting `account_id`.
+
+## Local test
+`pip install -r requirements.txt -r requirements-dev.txt && python -m pytest -q`

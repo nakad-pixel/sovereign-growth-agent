@@ -1,0 +1,19 @@
+{
+  "telegram_manual": {
+    "enabled": true,
+    "type": "manual",
+    "daily_cap": 5,
+    "note": "Short-form social/story content. After Approve, a ready-to-post package (and video) is sent to Telegram for you to post."
+  },
+  "github_blog": {
+    "enabled": false,
+    "type": "github_commit",
+    "daily_cap": 2,
+    "repo": "nakad-pixel/astro-blog-starter-template",
+    "branch": "main",
+    "content_dir": "src/content/blog",
+    "account_id": "",
+    "frontmatter_template": "---\ntitle: {title_json}\ndescription: {description_json}\npubDate: \"{date_human}\"\n---\n",
+    "note": "Blog article (markdown body) committed to the Astro blog repo after approval. DISABLED until COMPOSIO_API_KEY is valid and account_id is set."
+  }
+}
