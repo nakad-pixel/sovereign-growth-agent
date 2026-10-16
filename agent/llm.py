@@ -1,4 +1,5 @@
-"""Chat-completions JSON client (GitHub Models by default) with hard call budget, retry/backoff, model fallback.
+"""Chat-completions JSON client (Groq free tier by default; any OpenAI-compatible endpoint) with hard call budget,
+retry/backoff, model fallback and JSON-mode fallback.
 Uses plain HTTP so failures report exactly what the server said."""
 import json
 import re
@@ -38,11 +39,7 @@ def _parse(text):
 
 
 def _headers():
-    h = {"Authorization": f"Bearer {config.llm_key()}", "Content-Type": "application/json"}
-    if "github.ai" in config.BASE_URL:
-        h["Accept"] = "application/vnd.github+json"
-        h["X-GitHub-Api-Version"] = "2022-11-28"
-    return h
+    return {"Authorization": f"Bearer {config.llm_key()}", "Content-Type": "application/json"}
 
 
 def _retry_after(resp, attempt):
@@ -56,15 +53,18 @@ def call(system, user, required=()):
     global _calls
     url = config.BASE_URL.rstrip("/") + "/chat/completions"
     last = "no attempt made"
+    json_mode = True
     for model in (config.MODEL, config.FALLBACK_MODEL):
         for attempt in range(3):
             if _calls >= config.MAX_LLM_CALLS:
                 raise BudgetExceeded(f"LLM call budget ({config.MAX_LLM_CALLS}) exhausted")
             if not config.llm_key():
-                raise LLMError("No LLM credentials: set GITHUB_TOKEN (Actions provides it) or LLM_API_KEY")
+                raise LLMError("No LLM credentials: set the GROQ_API_KEY repo secret (or LLM_API_KEY)")
             _calls += 1
-            body = {"model": model, "temperature": 0.4, "response_format": {"type": "json_object"},
+            body = {"model": model, "temperature": 0.4,
                     "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]}
+            if json_mode:
+                body["response_format"] = {"type": "json_object"}
             try:
                 r = requests.post(url, headers=_headers(), json=body, timeout=90)
             except requests.RequestException as e:
@@ -78,8 +78,11 @@ def call(system, user, required=()):
                 continue
             if r.status_code in (401, 403):
                 raise LLMError(f"auth/permission error HTTP {r.status_code}: {snippet}")
-            if r.status_code == 400 or r.status_code == 404:
+            if r.status_code in (400, 404):
                 last = f"HTTP {r.status_code} for {model}: {snippet}"
+                if json_mode and "response_format" in snippet.lower():
+                    json_mode = False  # this model rejects JSON mode: retry plain, the parser strips fences
+                    continue
                 break  # model/params not accepted: go straight to the fallback model
             if r.status_code >= 400:
                 last = f"HTTP {r.status_code}: {snippet}"

@@ -22,13 +22,14 @@ Approval latency is the poller interval (GitHub cron can lag; expect 10-30 min).
 `/status` `/pause` `/resume` `/rev <amount> [note]` `/help`. Approve/Reject arrive as buttons under each draft.
 
 ## Setup (repo Settings, Secrets and variables, Actions)
-Required: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` (send /start to your bot, then read the id from `getUpdates`).
+Required: `GROQ_API_KEY`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` (send /start to your bot, then read the id from `getUpdates`).
 Optional: `COMPOSIO_API_KEY` (project key from the Composio dashboard, needed only for the `github_blog` channel).
-LLM calls use GitHub Models with the built-in `GITHUB_TOKEN` (free tier, rate limited). Override with `LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL`.
+LLM: Groq free tier (console.groq.com, OpenAI-compatible, no card). GitHub Models was retired on 2026-07-30, so it is not used.
+Any OpenAI-compatible provider works by setting `LLM_BASE_URL`, `LLM_MODEL`, `LLM_FALLBACK_MODEL`.
 
 ## Channels (`config/channels.json`)
 - `telegram_manual` (enabled): after approval, a ready-to-post package + video is sent to you to post yourself.
-- `github_blog` (disabled): commits an approved article to the Astro blog repo via Composio. Enable after setting `account_id`.
+- `github_blog` (disabled): commits an approved article to the Astro blog repo via Composio. Enable after connecting GitHub in your Composio project and setting `account_id`.
 
 ## Local test
 `pip install -r requirements.txt -r requirements-dev.txt && python -m pytest -q`
