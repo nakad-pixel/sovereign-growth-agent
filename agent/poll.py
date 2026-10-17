@@ -5,7 +5,8 @@ from . import config, learn, llm, publishers, state
 from . import memory as mem
 from . import telegram_io as tg
 
-HELP = ("Commands: /status  /pause  /resume  /rev <amount> [note]  /help\n"
+HELP = ("Just type an instruction (e.g. 'make a video about pricing roofing leads') and I'll draft it for approval.\n"
+        "Commands: /now  /propose <topic>  /status  /pause  /resume  /rev <amount> [note]  /help\n"
         "Drafts arrive with Approve/Reject buttons.")
 
 
@@ -63,6 +64,15 @@ def command(text):
     return HELP
 
 
+def directive(text):
+    """Human instruction -> one guarded proposal. Returns a reply (None when a draft was already sent)."""
+    from . import run
+    if state.ledger().get("paused"):
+        return "I'm paused. Send /resume first."
+    status, out = run.cycle(text)
+    return None if status == "queued" else out
+
+
 def handle(update):
     if "callback_query" in update:
         cq = update["callback_query"]
@@ -71,8 +81,19 @@ def handle(update):
             return
         tg.answer_callback(cq["id"], "Working...")
         tg.send(decide(decision, item_id))
-    elif update.get("message", {}).get("text", "").startswith("/"):
-        tg.send(command(update["message"]["text"]))
+    else:
+        text = update.get("message", {}).get("text", "").strip()
+        if not text:
+            return
+        cmd = text.split()[0].split("@")[0].lower() if text.startswith("/") else ""
+        if cmd in ("/now", "/propose"):
+            reply = directive(text.partition(" ")[2].strip())
+        elif text.startswith("/"):
+            reply = command(text)
+        else:
+            reply = directive(text)
+        if reply:
+            tg.send(reply)
 
 
 def main():

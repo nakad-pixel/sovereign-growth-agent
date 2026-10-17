@@ -1,4 +1,4 @@
-"""Scheduled run (every 6h): plan -> guard -> build -> ask approval -> remember."""
+"""One planning cycle: plan -> guard -> build -> ask approval -> remember. Used by the one-shot run and by sessions."""
 import json
 import os
 import sys
@@ -28,11 +28,16 @@ def system_prompt():
     )
 
 
-def propose():
+def propose(directive=""):
     system = system_prompt()
     ctx = ("RECENT:\n" + "\n".join(mem.recent(15)) + f"\nSTATUS: {learn.rung_text()}\nMETRICS:\n"
            + learn.metrics_summary())
-    plan = llm.call(system, ctx + "\nPick the ONE highest-leverage marketing action for this run.", KEYS)
+    if directive:
+        ctx += f"\nOWNER DIRECTIVE (from the human via Telegram; follow it, RULES still apply): {directive[:1000]}"
+        ask = "Do what the owner directive asks, as ONE concrete proposal."
+    else:
+        ask = "Pick the ONE highest-leverage marketing action for this run."
+    plan = llm.call(system, ctx + "\n" + ask, KEYS)
     related = {"past": mem.search(plan.get("search_memory", "")),
                "skills": learn.relevant_skills(f"{plan.get('reasoning', '')} {plan.get('search_memory', '')}"),
                "avoid": mem.search("avoid")}
@@ -66,20 +71,17 @@ def ask_approval(item):
     tg.send(text, buttons)
 
 
-def main():
+def cycle(directive=""):
+    """Returns (status, text). status: 'queued' (draft sent), 'full' (queue full), 'none' (no proposal)."""
     llm.reset()
-    led = state.ledger()
-    if (config.ROOT / "KILL").exists() or led.get("paused"):
-        print("paused or KILL present; exiting")
-        return 0
     for it in state.expire_pending():
         mem.add_episode("expired", f"No decision in time, expired: {it['title']}")
     pending = state.load_pending()
     if len(pending) >= config.MAX_PENDING:
-        tg.notify_safely(f"{len(pending)} drafts are waiting for your decision. Pausing new proposals until you tap Approve/Reject.")
         state.touch_last_run()
-        return 0
-    plan, proposal, why = propose()
+        return "full", f"{len(pending)} drafts are waiting for your decision. Approve/Reject them first."
+    plan, proposal, why = propose(directive)
+    status, text = "none", f"No proposal this cycle: {why}"
     if proposal and os.environ.get("DRY_RUN") == "1":
         print(json.dumps(proposal, indent=1))
     elif proposal:
@@ -90,8 +92,7 @@ def main():
         except Exception:
             state.pop_pending(item["id"])
             raise
-    else:
-        tg.notify_safely(f"Run finished with no proposal: {why}")
+        status, text = "queued", f"Draft sent: {proposal['title']}"
     mem.add_episode("run", f"Proposed: {proposal['title'] if proposal else 'nothing (' + why + ')'}. "
                     f"Lesson: {str(plan.get('lesson', ''))[:300]}")
     update = plan.get("memory_update")
@@ -99,7 +100,17 @@ def main():
         (config.MEM / "MEMORY.md").write_text(update.strip()[:3000] + "\n")
     mem.prune()
     state.touch_last_run()
-    print(f"done; LLM calls used: {llm.calls_used()}")
+    print(f"cycle done ({status}); LLM calls used: {llm.calls_used()}")
+    return status, text
+
+
+def main():
+    if (config.ROOT / "KILL").exists() or state.ledger().get("paused"):
+        print("paused or KILL present; exiting")
+        return 0
+    status, text = cycle()
+    if status in ("full", "none"):
+        tg.notify_safely(text)
     return 0
 
 

@@ -17,6 +17,8 @@ FALLBACK_MODEL = env("LLM_FALLBACK_MODEL", "openai/gpt-oss-20b")
 MAX_LLM_CALLS = int(env("MAX_LLM_CALLS", "10"))
 MAX_PENDING = int(env("MAX_PENDING", "3"))
 PENDING_TTL_HOURS = int(env("PENDING_TTL_HOURS", "72"))
+SESSION_MINUTES = float(env("SESSION_MINUTES", "290"))  # 0 = unlimited (always-on server)
+CYCLE_MINUTES = float(env("CYCLE_MINUTES", "180"))  # autonomous planning cycle inside a session
 
 
 def llm_key():

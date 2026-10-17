@@ -66,9 +66,10 @@ def answer_callback(callback_id, text=""):
         pass
 
 
-def get_updates(offset):
-    return call("getUpdates", {"offset": offset, "timeout": 0, "limit": 50,
-                               "allowed_updates": ["message", "callback_query"]})
+def get_updates(offset, timeout=0):
+    """timeout > 0 = long polling: Telegram holds the request open and answers the moment you send something."""
+    return call("getUpdates", {"offset": offset, "timeout": timeout, "limit": 50,
+                               "allowed_updates": ["message", "callback_query"]}, timeout=timeout + 15)
 
 
 def authorised(update):
