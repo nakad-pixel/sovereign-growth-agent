@@ -1,3 +1,1 @@
-# Curated long-term memory (the agent rewrites this; keep under 3000 chars)
-- Business: Nexus Web Systems (home-services automation content, affiliate/pay-per-lead, digital products).
-- Goals: first revenue, then compound. Winning formats: (none yet). Failed experiments: (none yet).
+Added skill: short_form_story_with_lead_cta – a template for creating vertical story videos that promote a free guide and include an affiliate/lead capture link.
