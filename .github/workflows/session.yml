@@ -1,9 +1,10 @@
 name: agent-session
-# Long session: listens to Telegram in real time for ~4h50m, runs autonomous cycles, memory in Cloudflare R2.
-# Manual start only until you decide to enable the schedule below.
+# Long session: listens to Telegram in real time for ~4h50m and runs autonomous cycles.
+# Memory: Cloudflare R2 when the R2 secrets exist, otherwise committed to git during the session.
+# Back-to-back sessions: a new one is queued every 5h and starts as soon as the previous one ends.
 on:
   workflow_dispatch:
-  # schedule: [{cron: "7 0,5,10,15,20 * * *"}]
+  schedule: [{cron: "7 0,5,10,15,20 * * *"}]
 concurrency: {group: agent-state, cancel-in-progress: false}
 permissions: {contents: write}
 jobs:
@@ -14,11 +15,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12", cache: pip}
-      - name: Require durable memory (R2)
-        env:
-          R2_KEY: ${{ secrets.R2_ACCESS_KEY_ID }}
-        run: |
-          if [ -z "$R2_KEY" ]; then echo "R2 secrets missing: refusing to run a long session without durable memory"; exit 1; fi
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
       - run: pip install -r requirements.txt
       - run: python -m agent.session
@@ -33,7 +29,7 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
-      - name: Backup state to git
+      - name: Final state backup to git
         if: always()
         run: bash scripts/commit_state.sh
       - name: Alert on failure

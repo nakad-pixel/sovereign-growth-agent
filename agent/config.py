@@ -19,6 +19,7 @@ MAX_PENDING = int(env("MAX_PENDING", "3"))
 PENDING_TTL_HOURS = int(env("PENDING_TTL_HOURS", "72"))
 SESSION_MINUTES = float(env("SESSION_MINUTES", "290"))  # 0 = unlimited (always-on server)
 CYCLE_MINUTES = float(env("CYCLE_MINUTES", "180"))  # autonomous planning cycle inside a session
+GIT_BACKUP_MINUTES = float(env("GIT_BACKUP_MINUTES", "20"))  # git state backup cadence when R2 is not configured
 
 
 def llm_key():
