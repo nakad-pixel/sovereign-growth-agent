@@ -36,5 +36,26 @@
    "Tap the link in our bio to download instantly.",
    "Enjoy exclusive discounts on top service providers."
   ]
+ },
+ {
+  "body": "",
+  "caption": "\ud83d\udca1 Want to automate your home and save $5 on the first service? Grab the free 5\u2011step guide and claim your discount now! \ud83d\udc49 https://example.com/discount?ref=agent",
+  "channel": "telegram_manual",
+  "created": 1792289896,
+  "expires": 1792549096,
+  "id": "5dfe08a9b6",
+  "title": "Get $5 Off Your First Home Service \u2013 Limited Time!",
+  "video_lines": [
+   "Slide 1: Tired of home chores?",
+   "Slide 2: Our FREE 5\u2011step guide shows you how to automate!",
+   "Slide 3: PLUS, get $5 OFF your first home\u2011service booking",
+   "Slide 4: Click the link, download the guide, claim the discount",
+   "Slide 5: Limited time \u2013 act now!",
+   "Slide 6: Trusted partners, no hidden fees",
+   "Slide 7: Your smarter home starts today",
+   "Slide 8: Tap to download & claim $5",
+   "Slide 9: Share with friends who need a break",
+   "Slide 10: Follow us for more home\u2011hacks"
+  ]
  }
 ]
