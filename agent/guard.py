@@ -12,6 +12,13 @@ BANNED = [
     r"fake (reviews?|testimonials?)",
     r"i (personally )?earned \$",
     r"doctor[- ]approved",
+    # invented social proof: the agent has no verified customer numbers, so any such claim is fabricated
+    r"\b(join|joined by) (hundreds|thousands|millions|over \d|\d[\d,]*\+?)",
+    r"(hundreds|thousands|millions) of (happy |satisfied |local )?(customers|clients|users|homeowners|contractors|businesses)",
+    r"\b(trusted|used|loved) by (over |more than )?\d",
+    r"\b\d[\d,]*\+? (happy |satisfied )(customers|clients|users|homeowners)",
+    r"\bas seen (on|in)\b",
+    r"\b(rated|ranked|voted) (#|number )?1\b",
 ]
 
 
