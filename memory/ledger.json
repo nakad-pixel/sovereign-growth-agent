@@ -1,8 +1,12 @@
 {
- "days": {},
+ "days": {
+  "2026-10-18": {
+   "telegram_manual": 1
+  }
+ },
  "last_run": "2026-10-18T02:12Z",
  "paused": false,
- "tg_offset": 779823888,
+ "tg_offset": 779823889,
  "titles": [
   "free-5-step-home-services-automation-guide",
   "free-home-services-automation-blueprint",
