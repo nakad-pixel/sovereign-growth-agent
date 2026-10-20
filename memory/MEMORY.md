@@ -1,1 +1,1 @@
-Added entry: Proposed "Flash $3 Discount on Your First Home Service – 24h Only" as the next concrete action to achieve the first $1 revenue. Recorded lesson on urgency + small discount effectiveness.
+Added entry: Proposed "Snap $5 Off Your First Home Service – 48h Flash" as the next concrete action to achieve the first $1 revenue. Recorded lesson on leveraging a higher discount and a new time window to capture missed prospects and boost conversion speed.
