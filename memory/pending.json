@@ -35,5 +35,26 @@
    "Use code SAVE5 at checkout.",
    "Tap the link and book today!"
   ]
+ },
+ {
+  "body": "",
+  "caption": "\ud83d\udc4b Hey! Get $3 off your first home service today \ud83d\udc49 https://example.com/flash",
+  "channel": "telegram_manual",
+  "created": 1792490427,
+  "expires": 1792749627,
+  "id": "905074a165",
+  "title": "Grab $3 Off Your First Home Service \u2013 24\u2011Hour Flash",
+  "video_lines": [
+   "Need a quick home\u2011service fix?",
+   "Enjoy $3 off your first job!",
+   "Tap the link and claim instantly.",
+   "Trusted pros for plumbing, HVAC, & more.",
+   "Only 24 hours \u2013 don\u2019t miss out!",
+   "Click, schedule, save $3.",
+   "No hidden fees, just real savings.",
+   "Join happy customers already saving.",
+   "Your home deserves top care.",
+   "Grab your $3 discount now!"
+  ]
  }
 ]
