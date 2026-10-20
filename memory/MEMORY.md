@@ -1,1 +1,1 @@
-Recorded new proposal: "Grab $3 Off Your First Home Service – 24‑Hour Flash" using short_form_story_with_lead_cta skill. Added note that a $3 discount and 24‑hour urgency are novel variations to avoid duplicate title issues and target the first $1 revenue.
+Added entry: Proposed "Flash $3 Discount on Your First Home Service – 24h Only" as the next concrete action to achieve the first $1 revenue. Recorded lesson on urgency + small discount effectiveness.
