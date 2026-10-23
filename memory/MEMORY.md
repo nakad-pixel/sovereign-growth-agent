@@ -1,1 +1,1 @@
-Added entry: Proposed "Snap $5 Off Your First Home Service – 48h Flash" as the next concrete action to achieve the first $1 revenue. Recorded lesson on leveraging a higher discount and a new time window to capture missed prospects and boost conversion speed.
+Added execution record for "Claim $5 Off Your First Home Service – 48‑Hour Flash" using short_form_story_with_discount_cta; noted increased discount and 48‑hour urgency as effective tactic for first‑dollar revenue.
