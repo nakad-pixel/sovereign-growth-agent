@@ -1,1 +1,1 @@
-Added execution record for "Claim $5 Off Your First Home Service – 48‑Hour Flash" using short_form_story_with_discount_cta; noted increased discount and 48‑hour urgency as effective tactic for first‑dollar revenue.
+Added pending execution record for "Snag $5 Off Your First Home Service – 48‑Hour Flash" using short_form_story_with_lead_cta. Expected outcome: generate first paying customer and move from rung 0 to rung 1 ($1).
