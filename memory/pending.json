@@ -1,22 +1,6 @@
 [
  {
   "body": "",
-  "caption": "\ud83d\ude80 Need a plumber, electrician, or cleaner? Get $5 off your first service with code SAVE5. \ud83d\udc49 https://example.com/home-service-discount",
-  "channel": "telegram_manual",
-  "created": 1792482037,
-  "expires": 1792741237,
-  "id": "f406a12366",
-  "title": "Save $5 on Your First Home Service \u2013 Today Only!",
-  "video_lines": [
-   "Tired of home repairs piling up?",
-   "We\u2019ve got a quick fix for you.",
-   "Save $5 on your first service.",
-   "Use code SAVE5 at checkout.",
-   "Tap the link and book today!"
-  ]
- },
- {
-  "body": "",
   "caption": "\ud83d\udc4b Hey! Get $3 off your first home service today \ud83d\udc49 https://example.com/flash",
   "channel": "telegram_manual",
   "created": 1792490427,
