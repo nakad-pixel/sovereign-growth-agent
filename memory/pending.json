@@ -1,22 +1,6 @@
 [
  {
   "body": "",
-  "caption": "\ud83d\ude80 Limited time! Save $5 on your first home service. \ud83d\udc49 https://track.example.com/save5?ref=telegram",
-  "channel": "telegram_manual",
-  "created": 1793007624,
-  "expires": 1793266824,
-  "id": "51f7551e2d",
-  "title": "Secure $5 Off Your First Home Service \u2013 48\u2011Hour Flash",
-  "video_lines": [
-   "Need a home service?",
-   "Save $5 today!",
-   "48\u2011hour flash deal",
-   "Use code: SAVE5",
-   "Tap the link now!"
-  ]
- },
- {
-  "body": "",
   "caption": "Get $5 off your first home service when you book within the next 48\u202fhours. No code needed \u2013 just tap the link!",
   "channel": "telegram_manual",
   "created": 1793048749,
