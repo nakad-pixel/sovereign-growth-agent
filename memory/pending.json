@@ -35,5 +35,22 @@
    "[Scene\u202f4] Text: \"Click the link & book now\"",
    "[Scene\u202f5] CTA: \"Limited time \u2013 act fast!\""
   ]
+ },
+ {
+  "body": "",
+  "caption": "\ud83d\ude80 48\u2011hour flash! Save $5 on your first home service. Click the link, claim now, and enjoy a spotless home. \u23f0",
+  "channel": "telegram_manual",
+  "created": 1793562501,
+  "expires": 1793821701,
+  "id": "37e1ee2d2b",
+  "title": "Get $5 Off Your First Home Service \u2013 48\u2011Hour Flash Deal",
+  "video_lines": [
+   "Slide 1: 48\u2011Hour Flash!",
+   "Slide 2: $5 OFF your first home service",
+   "Slide 3: Quick, easy booking",
+   "Slide 4: Tap the link below",
+   "Slide 5: Offer ends in 48 hrs",
+   "Slide 6: Don\u2019t miss out!"
+  ]
  }
 ]
