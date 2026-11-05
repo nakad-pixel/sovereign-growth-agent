@@ -1,43 +1,6 @@
 [
  {
   "body": "",
-  "caption": "Score $5 savings on your first home service! 48\u2011hour flash \u2013 claim now before it\u2019s gone.",
-  "channel": "telegram_manual",
-  "created": 1793586752,
-  "expires": 1793845952,
-  "id": "188a0353ed",
-  "title": "Score $5 Savings on Your First Home Service \u2013 48\u2011Hour Flash",
-  "video_lines": [
-   "Need a home service?",
-   "Score $5 savings today!",
-   "48\u2011hour flash \u2013 act fast!",
-   "Tap the link & book now",
-   "Limited spots \u2013 don\u2019t miss out!"
-  ]
- },
- {
-  "body": "",
-  "caption": "\ud83d\ude80 48\u2011hour flash! Snap $5 off any home service. Click the link, claim your discount, and enjoy fast, reliable help. \u23f0",
-  "channel": "telegram_manual",
-  "created": 1793598671,
-  "expires": 1793857871,
-  "id": "e0642bc22b",
-  "title": "Snap $5 Off Your First Home Service \u2013 48\u2011Hour Flash",
-  "video_lines": [
-   "[Scene 1] You\u2019re juggling chores\u2026",
-   "[Scene 2] A leak? A squeaky door?",
-   "[Scene 3] We\u2019ve got pros ready in minutes",
-   "[Scene 4] 48\u2011hour flash \u2013 $5 off your first service",
-   "[Scene 5] Tap the link, claim now!",
-   "[Scene 6] Limited spots \u2013 act fast!",
-   "[Scene 7] Trust local experts, guaranteed",
-   "[Scene 8] Your home, hassle\u2011free",
-   "[Scene 9] Offer expires in 48\u202fhrs",
-   "[Scene 10] Grab your $5 discount today!"
-  ]
- },
- {
-  "body": "",
   "caption": "\ud83d\ude80 48\u2011hour flash! Earn $5 credit on your first home service. Tap the link and claim now!",
   "channel": "telegram_manual",
   "created": 1793827040,
@@ -55,6 +18,22 @@
    "Your home, our care",
    "Discount applied instantly",
    "Don\u2019t miss out!"
+  ]
+ },
+ {
+  "body": "",
+  "caption": "Get $5 credit on your first home service\u2014only 48\u202fhours left! Tap to claim now: https://example.com/track?ref=flash5",
+  "channel": "telegram_manual",
+  "created": 1793860250,
+  "expires": 1794119450,
+  "id": "a6c8b5bb81",
+  "title": "Claim $5 Home Service Credit \u2013 48\u2011Hour Flash",
+  "video_lines": [
+   "Need a home service?",
+   "First\u2011time? Grab $5 credit!",
+   "Only 48\u202fhours to claim",
+   "Tap the link below",
+   "Fast, easy, guaranteed"
   ]
  }
 ]
