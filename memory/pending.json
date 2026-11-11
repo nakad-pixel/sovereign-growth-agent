@@ -1,23 +1,6 @@
 [
  {
   "body": "",
-  "caption": "\ud83d\ude80 48\u2011hour flash! Get $5 off your first home service. Tap the link, claim now!",
-  "channel": "telegram_manual",
-  "created": 1794127947,
-  "expires": 1794387147,
-  "id": "38edd1b482",
-  "title": "Enjoy $5 Off Your Initial Home Service \u2013 48\u2011Hour Flash",
-  "video_lines": [
-   "Need a home service?",
-   "Grab $5 off your first job",
-   "Only 48 hours left!",
-   "Tap the link below",
-   "Fast, reliable, affordable",
-   "Claim your discount now"
-  ]
- },
- {
-  "body": "",
   "caption": "48\u2011hour flash \u2013 claim your $5 credit now!",
   "channel": "telegram_manual",
   "created": 1794155959,
@@ -52,6 +35,22 @@
    "Your home, our priority.",
    "Discount applied instantly.",
    "Enjoy a spotless home today!"
+  ]
+ },
+ {
+  "body": "",
+  "caption": "Ready for a spotless home? Get $5 off your first service\u2014only 48\u202fhours left! Tap the link to claim now.",
+  "channel": "telegram_manual",
+  "created": 1794400744,
+  "expires": 1794659944,
+  "id": "df1c448ef0",
+  "title": "Jumpstart Your First Home Service \u2013 Grab $5 Off in 48 Hours!",
+  "video_lines": [
+   "Need a home service?",
+   "Get $5 off your first job!",
+   "Only 48\u202fhours to claim",
+   "Tap the link below",
+   "Your home, refreshed."
   ]
  }
 ]
