@@ -1,27 +1,6 @@
 [
  {
   "body": "",
-  "caption": "Save $5 on your first home service! \u23f0 48\u2011hour flash \u2013 tap \ud83d\udc49 [YourTrackedLink]",
-  "channel": "telegram_manual",
-  "created": 1794094728,
-  "expires": 1794353928,
-  "id": "7e619d510e",
-  "title": "First Home Service? Save $5 \u2013 48\u2011Hour Flash",
-  "video_lines": [
-   "First Home Service? Save $5 \u2013 48\u2011Hour Flash",
-   "48\u2011hour flash \u2013 act fast!",
-   "Tap the link below",
-   "Get $5 off instantly",
-   "Book your service now",
-   "Limited spots available",
-   "Don't miss out",
-   "Click \ud83d\udc49 [YourTrackedLink]",
-   "Your discount expires soon",
-   "Enjoy a cleaner home today"
-  ]
- },
- {
-  "body": "",
   "caption": "\ud83d\ude80 48\u2011hour flash! Get $5 off your first home service. Tap the link, claim now!",
   "channel": "telegram_manual",
   "created": 1794127947,
@@ -52,6 +31,27 @@
    "\ud83d\udd17 Tap the link to claim instantly",
    "\u2705 Simple savings, no strings attached",
    "\ud83c\udfe0 Your home, our service, $5 off"
+  ]
+ },
+ {
+  "body": "",
+  "caption": "Limited 48\u2011hour offer: $5 off your first home service. Tap the link to claim now!",
+  "channel": "telegram_manual",
+  "created": 1794357391,
+  "expires": 1794616591,
+  "id": "3fb3424993",
+  "title": "Kickstart Your Home Service with $5 Off \u2013 48\u2011Hour Flash",
+  "video_lines": [
+   "\ud83d\ude80 Kickstart your home service!",
+   "Get $5 off your first job.",
+   "Only 48 hours left.",
+   "Fast, reliable pros at your door.",
+   "Tap the link below to claim.",
+   "Zero hassle, just savings.",
+   "Limited spots \u2013 act now!",
+   "Your home, our priority.",
+   "Discount applied instantly.",
+   "Enjoy a spotless home today!"
   ]
  }
 ]
