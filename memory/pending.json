@@ -35,5 +35,26 @@
    "Tap the link below",
    "Your home, refreshed."
   ]
+ },
+ {
+  "body": "",
+  "caption": "\ud83d\ude80 Start Your Home Service Journey \u2014 $5 Off for 48\u202fHours Only!\n\nGrab $5 off your first home service. Offer expires in 48\u202fhours.\n\ud83d\udc49 https://example.com/discount?ref=telegram_manual\n\nTap the link and claim now!",
+  "channel": "telegram_manual",
+  "created": 1794433998,
+  "expires": 1794693198,
+  "id": "1477cbd045",
+  "title": "Start Your Home Service Journey \u2014 $5 Off for 48\u202fHours Only!",
+  "video_lines": [
+   "\ud83d\ude80 Ready to upgrade your home?",
+   "\ud83d\udca1 Get $5 off your first service",
+   "\u23f0 Offer lasts only 48\u202fhours!",
+   "\ud83d\udd17 Tap the link below to claim now",
+   "\u2705 Simple, fast, no strings attached",
+   "\ud83c\udfe0 Experience quality home care",
+   "\ud83d\udcb0 Limited spots \u2013 act fast!",
+   "\ud83d\udd27 Your home deserves the best",
+   "\ud83d\udcb8 Save $5 instantly",
+   "\ud83c\udf89 Enjoy a smoother, happier home"
+  ]
  }
 ]
