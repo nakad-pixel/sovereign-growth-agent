@@ -1,22 +1,6 @@
 [
  {
   "body": "",
-  "caption": "Ready for a spotless home? Get $5 off your first service\u2014only 48\u202fhours left! Tap the link to claim now.",
-  "channel": "telegram_manual",
-  "created": 1794400744,
-  "expires": 1794659944,
-  "id": "df1c448ef0",
-  "title": "Jumpstart Your First Home Service \u2013 Grab $5 Off in 48 Hours!",
-  "video_lines": [
-   "Need a home service?",
-   "Get $5 off your first job!",
-   "Only 48\u202fhours to claim",
-   "Tap the link below",
-   "Your home, refreshed."
-  ]
- },
- {
-  "body": "",
   "caption": "\ud83d\ude80 Start Your Home Service Journey \u2014 $5 Off for 48\u202fHours Only!\n\nGrab $5 off your first home service. Offer expires in 48\u202fhours.\n\ud83d\udc49 https://example.com/discount?ref=telegram_manual\n\nTap the link and claim now!",
   "channel": "telegram_manual",
   "created": 1794433998,
@@ -50,6 +34,27 @@
    "Only for the next 48\u202fhours.",
    "Tap the link, book now!",
    "Start your service journey today."
+  ]
+ },
+ {
+  "body": "",
+  "caption": "\ud83d\ude80 Start your home service quest and save $5! 48\u2011hour flash \u2013 claim now!",
+  "channel": "telegram_manual",
+  "created": 1794674012,
+  "expires": 1794933212,
+  "id": "4fa6a31b43",
+  "title": "Start Your Home Service Quest \u2013 $5 Off, 48\u2011Hour Flash!",
+  "video_lines": [
+   "Need a quick home fix?",
+   "Grab $5 off your first service",
+   "Only for the next 48 hours",
+   "Tap the link and book today",
+   "Local pros, fast & reliable",
+   "Zero hidden fees",
+   "Your home, our priority",
+   "Limited time \u2013 act fast",
+   "Click, schedule, save",
+   "Enjoy peace of mind"
   ]
  }
 ]

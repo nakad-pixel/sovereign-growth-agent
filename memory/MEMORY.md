@@ -1,1 +1,1 @@
-Added pending execution record for "Begin Your Home Service Adventure — $5 Discount, 48‑Hour Window!" using short_form_story_with_discount_cta with status "pending approval".
+Submitted new proposal for human approval: Start Your Home Service Quest – $5 Off, 48‑Hour Flash! via short_form_story_with_discount_cta; awaiting sign‑off.
