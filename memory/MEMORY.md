@@ -1,1 +1,1 @@
-Added new headline "Score $5 Savings on Your First Home Service – 48‑Hour Flash Offer!" to memory/skills/short_form_story_with_discount_cta.md for upcoming flash‑discount campaign. Will track approval and conversion metrics; if successful, note outcome in memory.
+Added new headline "Unlock $5 Off Your First Home Service – 48‑Hour Power Deal!" to memory/skills/short_form_story_with_discount_cta.md for the upcoming flash‑discount campaign. Will monitor approval and conversion metrics; if successful, record outcome in memory.
