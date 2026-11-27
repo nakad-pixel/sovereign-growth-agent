@@ -30,5 +30,23 @@
    "Tap the link and claim now",
    "Limited spots \u2013 act fast!"
   ]
+ },
+ {
+  "body": "",
+  "caption": "\ud83d\udd25 48\u2011hour countdown! Get $5 off your first home service. \ud83d\udc49 https://example.com/track?promo=flash48",
+  "channel": "telegram_manual",
+  "created": 1795777777,
+  "expires": 1796036977,
+  "id": "7b00a05af0",
+  "title": "Grab a $5 Voucher for Your First Home Service \u2013 48\u2011Hour Countdown!",
+  "video_lines": [
+   "Need a home repair?",
+   "Get $5 off instantly!",
+   "Only 48 hours left!",
+   "Tap the link to claim:",
+   "https://example.com/track?promo=flash48",
+   "Fast, reliable service",
+   "Limited time \u2013 act now!"
+  ]
  }
 ]
